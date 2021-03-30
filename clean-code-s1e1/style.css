@@ -137,7 +137,7 @@ button{
 }
 
 .delete:hover {
-    color: #cf2323;
+    filter: invert(0.5) sepia(1) saturate(100) hue-rotate(375deg);
 }
 
 .del-img {

@@ -12,7 +12,7 @@
         charset="utf-8">
   </head>
   <body class="page">
-    <figure class="matrix">
+    <header class="matrix">
       <img src="./eisenhower-matrix.jpg"
            class="matrix-img"
            alt="Eisenhower matrix">
@@ -20,7 +20,7 @@
           href="https://goal-life.com/page/method/matrix-eisenhower">
             Want more details?
       </a>
-    </figure>
+    </header>
     <main class="main">
       <section>
         <label class="label" for="new-task">Add Item</label>
@@ -33,8 +33,8 @@
       </section>
       <section>
         <h3 class="heading">Todo</h3>  
-        <article id="incomplete-tasks">
-          <article class="task-item">
+        <ul id="incomplete-tasks">
+          <li class="task-item">
             <input type="checkbox" class="checkbox">
             <span class="task">Pay Bills</span>
             <input type="text" class="task-input">
@@ -42,8 +42,8 @@
             <button class="btn delete">
               <img class="del-img" src="./remove.svg" alt="Delete">
             </button>
-          </article>
-          <article class="task-item edit-mode">
+          </li>
+          <li class="task-item edit-mode">
             <input type="checkbox" class="checkbox">
             <span class="task hide">Go Shopping</span>
             <input type="text" 
@@ -53,13 +53,13 @@
             <button class="btn delete">
               <img class="del-img" src="./remove.svg" alt="Delete">
             </button>
-          </article>
-        </article>
+          </li>
+        </ul>
       </section>
       <section>
         <h3 class="heading">Completed</h3>
-        <article id="completed-tasks">
-          <article class="task-item">
+        <ul id="completed-tasks">
+          <li class="task-item">
             <input type="checkbox" class="checkbox" checked>
             <span class="task complited">See the Doctor</span>
             <input type="text" class="task-input">
@@ -67,8 +67,8 @@
             <button class="btn delete">
               <img class="del-img" src="./remove.svg" alt="Delete">
             </button>
-          </article>
-        </article>
+          </li>
+        </ul>
       </section>
     </main>
     <script src="app.js"></script>
