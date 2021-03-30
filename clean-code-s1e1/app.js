@@ -17,12 +17,12 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 //New task list item
 var createNewTaskElement=function(taskString){
 
-    var listItem=document.createElement("li");
+    var listItem=document.createElement("article");
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
     //label
-    var label=document.createElement("label");//label
+    var span=document.createElement("span");//label
     //input (text)
     var editInput=document.createElement("input");//text
     //button.edit
@@ -33,8 +33,8 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     listItem.className = "task-item";
-    label.innerText=taskString;
-    label.className='task';
+    span.innerText=taskString;
+    span.className='task';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
@@ -53,7 +53,7 @@ var createNewTaskElement=function(taskString){
 
     //and appending.
     listItem.appendChild(checkBox);
-    listItem.appendChild(label);
+    listItem.appendChild(span);
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
@@ -86,7 +86,7 @@ var editTask=function(){
     var listItem=this.parentNode;
 
     var editInput=listItem.querySelector('.task-input');
-    var label=listItem.querySelector(".task");
+    var span=listItem.querySelector(".task");
     var editBtn=listItem.querySelector(".edit");
     var containsClass=listItem.classList.contains("edit-mode");
     //If class of the parent is .editmode
@@ -95,13 +95,13 @@ var editTask=function(){
         //switch to .editmode
         //label becomes the inputs value.
         editInput.classList.remove('show');
-        label.classList.remove('hide');
-        label.innerText=editInput.value;
+        span.classList.remove('hide');
+        span.innerText=editInput.value;
         editBtn.innerText="Edit";
     }else{
         editInput.classList.add('show');
-        label.classList.add('hide');
-        editInput.value=label.innerText;
+        span.classList.add('hide');
+        editInput.value=span.innerText;
         editBtn.innerText="Save";
     }
 
@@ -115,9 +115,9 @@ var deleteTask=function(){
     console.log("Delete Task...");
 
     var listItem=this.parentNode;
-    var ul=listItem.parentNode;
+    var section=listItem.parentNode;
     //Remove the parent list item from the ul.
-    ul.removeChild(listItem);
+    section.removeChild(listItem);
 
 }
 
